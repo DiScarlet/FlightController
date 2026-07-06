@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "switches")(type "KiCad")(uri "C:/Hardware/FlightController/KiCAD_Libs/Additional/symbols/switches.kicad_sym")(options "")(descr ""))
+)
