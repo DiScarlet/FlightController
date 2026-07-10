@@ -49,3 +49,20 @@ Lapse Links:
 To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
 ![TPS62125DSG Wiring](<Images/Screenshot 2026-07-08 015507.png>)
 ![ESP32 + Power Schematics](<Images/Screenshot 2026-07-08 015517.png>)
+
+--------------------
+created_at: "2026-07-08"
+Lapse Links: 
+- ss
+Changed TPS62125 vs TPS629203 ![alt text](Images/image.png). switching from DRV8833PWP OBSOLETE
+This product is no longer in production.
+ to DRV8847PWPR custom. switching to 4s lipo.
+
+ Decided with motors to set my setup - https://hobbywinguav.com/product/2807/ XRotor 2807 1300KV https://www.hobbywing.com/uploads/file/20250207/46cccf132a1b9971633a272da27fb76f.pdf
+ H bridge to esc
+ comopare datasheet of ecs motors
+ Xrotor 65A 4in1 Lite BLS RTF esc https://hobbywinguav.com/product/xrotor-65a-4in1-fpv/ 
+ https://www.hobbywing.com/en/uploads/file/20250324/715cf619a357b18a11761e3bb13e4f6d.pdf
+ custom ESC_Xrotor_65A 4in1![alt text](<Images/Screenshot 2026-07-11 000808.png>)![alt text](<Images/Screenshot 2026-07-11 001029.png>)
+ WIRE ESC![alt text](<Images/Screenshot 2026-07-11 002627.png>)
+ change conectors to 3 pin for brushless motors
