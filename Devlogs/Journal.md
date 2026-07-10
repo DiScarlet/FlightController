@@ -61,8 +61,11 @@ This product is no longer in production.
  Decided with motors to set my setup - https://hobbywinguav.com/product/2807/ XRotor 2807 1300KV https://www.hobbywing.com/uploads/file/20250207/46cccf132a1b9971633a272da27fb76f.pdf
  H bridge to esc
  comopare datasheet of ecs motors
- Xrotor 65A 4in1 Lite BLS RTF esc https://hobbywinguav.com/product/xrotor-65a-4in1-fpv/ 
- https://www.hobbywing.com/en/uploads/file/20250324/715cf619a357b18a11761e3bb13e4f6d.pdf
+ Xrotor 65A 4in1 Lite BLS RTF esc ds https://www.hobbywing.com/en/uploads/file/20251120/81969c41227e3db78d441e9c20476cf1.pdf buy https://www.drone-fpv-racer.com/en/hobbywing-65a-4in1-6s-lite-bls-v2-fpv-esc-15678.html
  custom ESC_Xrotor_65A 4in1![alt text](<Images/Screenshot 2026-07-11 000808.png>)![alt text](<Images/Screenshot 2026-07-11 001029.png>)
  WIRE ESC![alt text](<Images/Screenshot 2026-07-11 002627.png>)
  change conectors to 3 pin for brushless motors
+ https://www.drone-fpv-racer.com/en/hobbywing-65a-4in1-6s-lite-bls-v2-fpv-esc-15678.html V2 is better BTW
+ removed connectors 
+ added volage and currebt montioring
+ BATTERY NO COON COS STRINGT TO ESC
