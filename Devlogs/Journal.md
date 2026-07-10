@@ -69,3 +69,4 @@ This product is no longer in production.
  removed connectors 
  added volage and currebt montioring
  BATTERY NO COON COS STRINGT TO ESC
+ added voltage monitor
