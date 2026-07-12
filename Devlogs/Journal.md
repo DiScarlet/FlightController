@@ -46,7 +46,7 @@ Overall, the schematics look way more readable now, and the component switch was
 created_at: "2026-07-08"
 Lapse Links: 
 - [Lapse 4](https://lapse.hackclub.com/timelapse/zhmaA2kOq_Py)
-To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
+Day 3: To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
 ![TPS62125DSG Wiring](<Images/Screenshot 2026-07-08 015507.png>)
 ![ESP32 + Power Schematics](<Images/Screenshot 2026-07-08 015517.png>)
 
@@ -54,7 +54,7 @@ To use more powerful motors, my infrastructure allows me to switch from a 1S to 
 created_at: "2026-07-11"
 Lapse Links: 
 - [Lapse 5](https://lapse.hackclub.com/timelapse/zi6OlWzVVC0I)
-Today I made significant modifications to the flight controller design. I stepped up from a simple 2S brushed drone concept to the prototype architecture of a real 4S 7" brushless drone.
+Day 4: Today I made significant modifications to the flight controller design. I stepped up from a simple 2S brushed drone concept to the prototype architecture of a real 4S 7" brushless drone.
 
 1. Updated the buck converter
 
@@ -126,3 +126,10 @@ TODO:
 - Run KiCad ERC and begin PCB layout.
 
 ![Full Shcematics of Today](<Images/Screenshot 2026-07-11 031332.png>)
+
+--------------------
+created_at: "2026-07-12"
+Lapse Links: 
+- [Lapse 6](link)
+Day 5: Today I aim to replace my esp32 feather v2 devboard with pure chip and elements needed for this to move from amature shcemtic to real thing. devboard served me well but here are the changes;
+- removed sp32 feather v2 devboard 
