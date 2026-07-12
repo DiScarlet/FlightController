@@ -133,3 +133,10 @@ Lapse Links:
 - [Lapse 6](link)
 Day 5: Today I aim to replace my esp32 feather v2 devboard with pure chip and elements needed for this to move from amature shcemtic to real thing. devboard served me well but here are the changes;
 - removed sp32 feather v2 devboard 
+https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf
+ESP32-S3-WROOM-1U
+changed TPS629203 output to 3v3 0![USB C](<Images/Screenshot 2026-07-12 223511.png>)
+
+I rewatched the replay and noticed that after my laptop crashed, the screen recorder stopped showing my screen for the past 10 minutes and just recorded the same frozen frame. I will add Images/Screenshot 2026-07-12 223511.png to Day 5 of my journal as proof of my progress.
+
+ADDED TEST PROBES AD MOUNT HOLES
