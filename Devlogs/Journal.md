@@ -130,7 +130,10 @@ TODO:
 --------------------
 created_at: "2026-07-12"
 Lapse Links: 
-- [Lapse 6](link)
+- [Lapse 6](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
+- [Lapse 7](https://lapse.hackclub.com/timelapse/CSfY-yu12VB2)
+- [Lapse 8](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
+- [Lapse 9](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
 Day 5: Today I aim to replace my esp32 feather v2 devboard with pure chip and elements needed for this to move from amature shcemtic to real thing. devboard served me well but here are the changes;
 - removed sp32 feather v2 devboard 
 https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf
@@ -139,4 +142,9 @@ changed TPS629203 output to 3v3 0![USB C](<Images/Screenshot 2026-07-12 223511.p
 
 I rewatched the replay and noticed that after my laptop crashed, the screen recorder stopped showing my screen for the past 10 minutes and just recorded the same frozen frame. I will add Images/Screenshot 2026-07-12 223511.png to Day 5 of my journal as proof of my progress.
 
+4S USED TO BE LIKE ![alt text](<Images/Screenshot 2026-07-13 004526.png>)
 ADDED TEST PROBES AD MOUNT HOLES
+NOW ITS TIME TO SWITHC TO 6S
+1) TPSM63603 to supprt up to 36v https://www.ti.com/lit/ds/symlink/tpsm63603.pdf
+MADE CUUSTOM SYMBOL![alt text](<Images/Screenshot 2026-07-13 004431.png>)
+ 
