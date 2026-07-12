@@ -134,17 +134,53 @@ Lapse Links:
 - [Lapse 7](https://lapse.hackclub.com/timelapse/CSfY-yu12VB2)
 - [Lapse 8](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
 - [Lapse 9](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
-Day 5: Today I aim to replace my esp32 feather v2 devboard with pure chip and elements needed for this to move from amature shcemtic to real thing. devboard served me well but here are the changes;
-- removed sp32 feather v2 devboard 
+Day 5: Today I replaced the ESP32 Feather V2 development board with the actual ESP32-S3-WROOM-1U module and all of the supporting circuitry required for a production PCB. The Feather dev board served me well for prototyping, but it was time to move to a real hardware design.
+ESP32
+- Removed the Adafruit ESP32 Feather V2 development board.
+- Switched to the ESP32-S3-WROOM-1U module.
+- Added the required support circuitry:
+  - EN reset circuit
+  - BOOT button
+  - USB-C connector
+  - USB D+ / D− wiring
+  - Decoupling capacitors
+  - Voltage divider for battery monitoring
+
+ESP32-S3-WROOM-1U datasheet:
 https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf
-ESP32-S3-WROOM-1U
-changed TPS629203 output to 3v3 0![USB C](<Images/Screenshot 2026-07-12 223511.png>)
+Originally the design targeted a 4S battery:
 
-I rewatched the replay and noticed that after my laptop crashed, the screen recorder stopped showing my screen for the past 10 minutes and just recorded the same frozen frame. I will add Images/Screenshot 2026-07-12 223511.png to Day 5 of my journal as proof of my progress.
+![4S Architecture](<Images/Screenshot 2026-07-13 004526.png>)
 
-4S USED TO BE LIKE ![alt text](<Images/Screenshot 2026-07-13 004526.png>)
-ADDED TEST PROBES AD MOUNT HOLES
-NOW ITS TIME TO SWITHC TO 6S
-1) TPSM63603 to supprt up to 36v https://www.ti.com/lit/ds/symlink/tpsm63603.pdf
-MADE CUUSTOM SYMBOL![alt text](<Images/Screenshot 2026-07-13 004431.png>)
- 
+I added:
+- test points for debugging,
+- PCB mounting holes,
+- improved power distribution.
+
+I then decided to redesign the power supply so the flight controller can support both **4S and 6S LiPo batteries**.
+
+The previous TPS629203 regulator was replaced with the **TPSM63603**, which supports input voltages up to 36 V.
+
+TPSM63603 datasheet:
+https://www.ti.com/lit/ds/symlink/tpsm63603.pdf
+
+I created a custom KiCad symbol for the TPSM63603:
+
+![TPSM63603 Symbol](<Images/Screenshot 2026-07-13 004431.png>)
+
+Then I integrated and wired the new regulator into the schematic:
+
+![4S-6S Architecture Start](<Images/Screenshot 2026-07-13 021325.png>)
+
+After my laptop crashed, I noticed the screen recorder froze for the last ~10 minutes and only recorded a still image. I added a screenshot of the completed work as proof of progress.
+
+![USB C](<Images/Screenshot 2026-07-12 223511.png>)
+
+## TODO
+- Verify the TPSM63603 wiring against the TI reference schematic.
+- Check all capacitor values and voltage ratings.
+- Verify the feedback resistor values for a 3.3 V output.
+- Add a capacitor on the battery voltage monitoring line (V_MON).
+- Run ERC before starting PCB layout.
+- Begin PCB component placement.
+- Go touch the grass and finally sleep.
