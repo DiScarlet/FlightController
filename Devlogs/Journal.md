@@ -176,7 +176,7 @@ After my laptop crashed, I noticed the screen recorder froze for the last ~10 mi
 
 ![USB C](<Images/Screenshot 2026-07-12 223511.png>)
 
-## TODO
+## TODO:
 - Verify the TPSM63603 wiring against the TI reference schematic.
 - Check all capacitor values and voltage ratings.
 - Verify the feedback resistor values for a 3.3 V output.
@@ -184,3 +184,24 @@ After my laptop crashed, I noticed the screen recorder froze for the last ~10 mi
 - Run ERC before starting PCB layout.
 - Begin PCB component placement.
 - Go touch the grass and finally sleep.
+
+
+--------------------
+created_at: "2026-07-13"
+Lapse Links:
+- [Lapse 10](https://lapse.hackclub.com/timelapse/1pxt6WZpChBw)
+- [Lapse 11](https://lapse.hackclub.com/timelapse/10gVjKCt_ep9)
+
+Day 6: Continued refining the flight controller schematic and completed the transition to support a **4S–6S LiPo** power input. I replaced the original 20 V TVS diode with a **Vishay SMBJ28A**, which has a 28 V reverse working voltage, making it suitable for a fully charged 6S LiPo (25.2 V) while still providing transient protection.
+
+While reviewing the schematic, I discovered a short circuit by using KiCad's **Net Highlight** tool. Highlighting the **3.3 V** net also highlighted **GND**, immediately indicating a direct short. After tracing the connection, I found that the ESP32's 3.3 V decoupling capacitors had been wired incorrectly. Fixing the capacitor connections removed the short.
+
+![Shorted Schematics](<Images/Screenshot 2026-07-13 220404.png>)
+
+With the power circuitry corrected, I finished updating the schematic for reliable 4S–6S operation and performed a full schematic review, cleaning up ERC issues along the way.
+
+![Fixed 4S-6S Schematics](<Images/Screenshot 2026-07-13 222019.png>)
+
+The final result was reducing the ERC report from **more than 60 errors to zero**. Most of the remaining issues were caused by decorative net labels, intentionally unused pins, and missing ERC markers rather than actual electrical problems. After replacing decorative labels with graphical text, adding No Connect markers where appropriate, and fixing the genuine wiring mistakes, the schematic passed ERC without any errors.
+
+![ERC Showing 0 Errors](<Images/Screenshot 2026-07-13 222055.png>)

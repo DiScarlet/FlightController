@@ -44,3 +44,6 @@ fp-info-cache
 
 #Libs
 KiCAD_Libs
+
+#Logs
+ERC_logs
