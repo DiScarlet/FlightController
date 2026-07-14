@@ -15,4 +15,5 @@
   (lib (name "SparkFun-Sensor")(type "KiCad")(uri "C:/Hardware/FlightController/KiCAD_Libs/SparkFun-KiCad-Libraries-main/footprints/SparkFun-Sensor.pretty")(options "")(descr ""))
   (lib (name "SparkFun-Switch")(type "KiCad")(uri "C:/Hardware/FlightController/KiCAD_Libs/SparkFun-KiCad-Libraries-main/footprints/SparkFun-Switch.pretty")(options "")(descr ""))
   (lib (name "footprints")(type "KiCad")(uri "C:/Hardware/FlightController/KiCAD_Libs/Additional/footprints.pretty")(options "")(descr ""))
+  (lib (name "FCFootprints")(type "KiCad")(uri "C:/Hardware/FlightController/KiCAD_Libs/FCFootprints.pretty")(options "")(descr ""))
 )

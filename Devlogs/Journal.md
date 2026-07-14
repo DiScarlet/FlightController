@@ -6,8 +6,8 @@ created_at: "2026-07-06"
 ----------------------
 created_at: "2026-07-06"
 Lapse Links: 
-- [Lapse 1](https://lapse.hackclub.com/timelapse/7EcZ5cB8u3wI)
-- [Lapse 2](https://lapse.hackclub.com/timelapse/V2QrQ_YrS28b)
+- [Lapse Schematics 1](https://lapse.hackclub.com/timelapse/7EcZ5cB8u3wI)
+- [Lapse Schematics 2](https://lapse.hackclub.com/timelapse/V2QrQ_YrS28b)
 Day 1: I am really excited to start this amazing project! 
 I'll put a lot of work into this. I looked up some tutorials already, but a lot of them are too old and don't use modern technology or they use components I'd prefer not to.I want to start by following the schematics in the tutorial, and then, once I understand the full idea, switch to a completely different version created entirely by me.
 I added the initial component schematics with the ESP32 WROOM Module. I might change it later, but it is currently missing a lot of components, so the tutorial has to add them and wire them up. This will help me better understand the internal structure of the ESP32 WROOM module. Even if I switch to more modern microcontrollers later, it will still help me progress faster because I will understand the internal wiring.
@@ -28,7 +28,7 @@ I like what I've done so far. Even though I am still not finished, I understand 
 ---------------------
 created_at: "2026-07-07"
 Lapse Links: 
-- [Lapse 3](https://lapse.hackclub.com/timelapse/JKiI6UassHQw)
+- [Lapse Schematics 3](https://lapse.hackclub.com/timelapse/JKiI6UassHQw)
 Day 2: Even though I really enjoyed the progress of working on a lot of interesting stuff yesterday, there were too many unnecessary components. I changed the main controller to the Adafruit ESP32 Feather V2, which reduced the amount of components drastically.
 This board has a lot of components already integrated into its internal structure, so I could alter the following elements:
 1) Microcontroller: Adafruit ESP32 Feather V2. Why V2? It has USB-C and easier power management already integrated.
@@ -45,7 +45,7 @@ Overall, the schematics look way more readable now, and the component switch was
 --------------------
 created_at: "2026-07-08"
 Lapse Links: 
-- [Lapse 4](https://lapse.hackclub.com/timelapse/zhmaA2kOq_Py)
+- [Lapse Schematics 4](https://lapse.hackclub.com/timelapse/zhmaA2kOq_Py)
 Day 3: To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
 ![TPS62125DSG Wiring](<Images/Screenshot 2026-07-08 015507.png>)
 ![ESP32 + Power Schematics](<Images/Screenshot 2026-07-08 015517.png>)
@@ -53,7 +53,7 @@ Day 3: To use more powerful motors, my infrastructure allows me to switch from a
 --------------------
 created_at: "2026-07-11"
 Lapse Links: 
-- [Lapse 5](https://lapse.hackclub.com/timelapse/zi6OlWzVVC0I)
+- [Lapse Schematics 5](https://lapse.hackclub.com/timelapse/zi6OlWzVVC0I)
 Day 4: Today I made significant modifications to the flight controller design. I stepped up from a simple 2S brushed drone concept to the prototype architecture of a real 4S 7" brushless drone.
 
 1. Updated the buck converter
@@ -130,10 +130,10 @@ TODO:
 --------------------
 created_at: "2026-07-12"
 Lapse Links: 
-- [Lapse 6](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
-- [Lapse 7](https://lapse.hackclub.com/timelapse/CSfY-yu12VB2)
-- [Lapse 8](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
-- [Lapse 9](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
+- [Lapse Schematics 6](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
+- [Lapse Schematics 7](https://lapse.hackclub.com/timelapse/CSfY-yu12VB2)
+- [Lapse Schematics 8](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
+- [Lapse Schematics 9](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
 Day 5: Today I replaced the ESP32 Feather V2 development board with the actual ESP32-S3-WROOM-1U module and all of the supporting circuitry required for a production PCB. The Feather dev board served me well for prototyping, but it was time to move to a real hardware design.
 ESP32
 - Removed the Adafruit ESP32 Feather V2 development board.
@@ -189,8 +189,8 @@ After my laptop crashed, I noticed the screen recorder froze for the last ~10 mi
 --------------------
 created_at: "2026-07-13"
 Lapse Links:
-- [Lapse 10](https://lapse.hackclub.com/timelapse/1pxt6WZpChBw)
-- [Lapse 11](https://lapse.hackclub.com/timelapse/10gVjKCt_ep9)
+- [Lapse Schematics 10](https://lapse.hackclub.com/timelapse/1pxt6WZpChBw)
+- [Lapse Schematics 11](https://lapse.hackclub.com/timelapse/10gVjKCt_ep9)
 
 Day 6: Continued refining the flight controller schematic and completed the transition to support a **4S–6S LiPo** power input. I replaced the original 20 V TVS diode with a **Vishay SMBJ28A**, which has a 28 V reverse working voltage, making it suitable for a fully charged 6S LiPo (25.2 V) while still providing transient protection.
 
@@ -200,8 +200,25 @@ While reviewing the schematic, I discovered a short circuit by using KiCad's **N
 
 With the power circuitry corrected, I finished updating the schematic for reliable 4S–6S operation and performed a full schematic review, cleaning up ERC issues along the way.
 
-![Fixed 4S-6S Schematics](<Images/Screenshot 2026-07-13 222019.png>)
+![Fixed 4S-6S Schematics](<Images/Screenshot 2026-07-14 011515.png>)
 
 The final result was reducing the ERC report from **more than 60 errors to zero**. Most of the remaining issues were caused by decorative net labels, intentionally unused pins, and missing ERC markers rather than actual electrical problems. After replacing decorative labels with graphical text, adding No Connect markers where appropriate, and fixing the genuine wiring mistakes, the schematic passed ERC without any errors.
 
 ![ERC Showing 0 Errors](<Images/Screenshot 2026-07-13 222055.png>)
+
+
+--------------------
+created_at: "2026-07-14"
+Lapse Links:
+- [Lapse 12](link)
+
+Day 7: onto the footprintsss
+C10 Multilayer Ceramic Capacitors MLCC - SMD/SMT 630V 0.068uF X7R 1210 10% FlexiTerm will soldering be ok - Capacitor_SMD:C_1210_3225Metric
+
+UJ20-C-H-G-SMT-2A-P16-TR as usb c - how many pins do i need - lib on https://www.mouser.fi/en/ProductDetail/Same-Sky/UJ20-C-H-G-SMT-2A-P16-TR?qs=6avfeC6zeS4lRZlgHZHlwQ%3D%3D
+
+which width for tstponts
+
+do i jsut leave esc without or do i need to set delete fro mfootpint assigments
+which push?
+haven't w e forgittten abiut hte reset schematics and connrcted? 
