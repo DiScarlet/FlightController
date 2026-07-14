@@ -191,6 +191,10 @@ created_at: "2026-07-13"
 Lapse Links:
 - [Lapse Schematics 10](https://lapse.hackclub.com/timelapse/1pxt6WZpChBw)
 - [Lapse Schematics 11](https://lapse.hackclub.com/timelapse/10gVjKCt_ep9)
+- [Flight Controller Footprints 1](https://lapse.hackclub.com/timelapse/hQegLY-AzRu6)
+- [Flight Controller Footprints 2](https://lapse.hackclub.com/timelapse/EoTzfVyzHLk1)
+- [Flight Controller Footprints 3](https://lapse.hackclub.com/timelapse/lF_Vx_5Nq1XL)
+- [Flight Controller Components 1](https://lapse.hackclub.com/timelapse/Cr0G3cQVFeo1)
 
 Day 6: Continued refining the flight controller schematic and completed the transition to support a **4S–6S LiPo** power input. I replaced the original 20 V TVS diode with a **Vishay SMBJ28A**, which has a 28 V reverse working voltage, making it suitable for a fully charged 6S LiPo (25.2 V) while still providing transient protection.
 
@@ -249,3 +253,5 @@ Another question that has started to interest me is whether designing and manufa
 Once I finish the ComponentsReferences.md file, I plan to add the price of every component and calculate the total cost of the flight controller. I'm genuinely curious to see what the final number will be and how it compares to commercially available flight controllers.
 
 If you're reading this: Author wrote it sitting at the railway station with 12h of sleep in the past week. I'm kinda dedicated to this project and kinda wanna sleep. "To sleep or not to sleep?" - That is the question!
+
+Fortunately, it looks like I should be able to purchase most of the required components from Mouser Finland, which will make ordering everything much simpler. However, finding actual components instead of just selecting values from a schematic turned out to be much more difficult than I expected. Every capacitor, resistor, connector, and protection device comes in dozens or even hundreds of variants with different package sizes, voltage ratings, tolerances, temperature characteristics, and manufacturers. Learning how to choose real parts that satisfy both the electrical requirements and are still practical to solder by hand has probably been one of the most time-consuming parts of the project so far. I documented the selected components in [Components References](../ComponentsReferences.md).
