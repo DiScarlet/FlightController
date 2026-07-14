@@ -9674,7 +9674,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "13f45aa7-4969-4638-a3cd-70e9fded9335")
 		(property "Reference" "U5"
