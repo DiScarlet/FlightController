@@ -212,13 +212,40 @@ created_at: "2026-07-14"
 Lapse Links:
 - [Lapse 12](link)
 
-Day 7: onto the footprintsss
-C10 Multilayer Ceramic Capacitors MLCC - SMD/SMT 630V 0.068uF X7R 1210 10% FlexiTerm will soldering be ok - Capacitor_SMD:C_1210_3225Metric
+Day 7: Moving on to Footprints.
 
-UJ20-C-H-G-SMT-2A-P16-TR as usb c - how many pins do i need - lib on https://www.mouser.fi/en/ProductDetail/Same-Sky/UJ20-C-H-G-SMT-2A-P16-TR?qs=6avfeC6zeS4lRZlgHZHlwQ%3D%3D
+Started assigning footprints to all components in the schematic. While selecting them, I also checked whether the chosen packages would actually be practical to solder by hand. For example, I verified that the 1210 package for the 630 V, 68 nF X7R MLCC (C10) should still be manageable for manual soldering.
 
-which width for tstponts
+I also created a few files that will continue to evolve throughout the project. They are not finished yet, but they need to be prepared before starting the actual PCB design if I want to build this flight controller in real life.
 
-do i jsut leave esc without or do i need to set delete fro mfootpint assigments
-which push?
-haven't w e forgittten abiut hte reset schematics and connrcted? 
+Bill of Material Exported from KiCad
+Components References (manufacturer, part names, purchase links)
+
+There were still many design decisions that required research before finalizing the PCB, including:
+
+Choosing the correct footprint for the UJ20-C-H-G-SMT-2A-P16-TR USB-C connector and understanding which of its 16 pins are actually required for USB 2.0 operation.
+Selecting appropriate test point sizes.
+Deciding whether the external XRotor ESC should remain in the schematic without a footprint or be excluded from PCB generation.
+Choosing suitable push buttons for the BOOT and RESET functions.
+Verifying that the RESET circuit had not been forgotten and was wired correctly.
+
+I spent quite a bit of time looking up components, comparing alternatives, and selecting footprints that match the actual parts.
+
+I also used TI WEBENCH to generate and compare a custom implementation of the TPSM63603 buck converter and to better understand the recommended layout and surrounding components.
+
+
+
+
+After going through the entire schematic, I assigned footprints to every component except the external ESC, which is not part of the flight controller PCB.
+
+I also corrected several pin assignments and footprint mismatches that would have caused ERC errors later during the design process.
+
+One thing I have learned is that designing the schematic itself is only part of the work. Researching components is surprisingly time-consuming. Every resistor, capacitor, connector, and integrated circuit has multiple possible variants, each with different voltage ratings, tolerances, packages, manufacturers, and availability. Learning the correct engineering terminology and understanding datasheets well enough to choose the appropriate parts has been one of the more challenging aspects of the project.
+
+Fortunately, it looks like I should be able to purchase most of the required components from Mouser Finland, which would make ordering much simpler.
+
+Another question that has started to interest me is whether designing and manufacturing a custom flight controller actually makes economic sense. After spending time designing the hardware, debugging it, ordering components, assembling the PCB, and testing everything, is there any real cost advantage left? Or is it simply cheaper to buy an already proven flight controller from one of the large Chinese manufacturers unless a very specific custom feature is needed?
+
+Once I finish the ComponentsReferences.md file, I plan to add the price of every component and calculate the total cost of the flight controller. I'm genuinely curious to see what the final number will be and how it compares to commercially available flight controllers.
+
+If you're reading this: Author wrote it sitting at the railway station with 12h of sleep in the past week. I'm kinda dedicated to this project and kinda wanna sleep. "To sleep or not to sleep?" - That is the question!
