@@ -291,3 +291,22 @@ Updated the Bill of Materials with production-ready components and, after breaki
 ![Footprints](<Images/Screenshot 2026-07-18 051918.png>)
  
  Btw, I really like this journal entry. Rereading it makes me understand that this project has taught me more than I expected. 
+
+
+ -------
+ Switched stm32 footpront. started adding 3d models. changed usb c sym to be alliged with footpront. fixed yest mist - for imu test pint as footprt was. fixed TPSM63603 which was missing 3 pins. 
+
+ Warning: No net found for component J2 pad MP (no pin MP in symbol).
+Warning: No net found for component J3 pad MP (no pin MP in symbol).
+Warning: No net found for component J2 pad MP (no pin MP in symbol).
+Warning: No net found for component J3 pad MP (no pin MP in symbol).
+
+
+Fixed footprint/sym mismatch issues. must have a ref for place, looking for 1 from real fcs. final schematics for now ![alt text](<Images/Screenshot 2026-07-18 210528.png>)
+
+
+![alt text](<Images/Screenshot 2026-07-18 210209.png>) what i have to wire
+
+Fixed symbols/footprints mismatch. Added pins, upadated and modified several symbols and footprints to at the end of the process achive 0 import errors. ![Placing comonnets](<Images/Screenshot 2026-07-18 212906.png>)![Placement idea 1](<Images/Screenshot 2026-07-18 214414.png>).
+time to separarte into top and bottom parts. size of fc must mutch the esc. made +- border of 30.5 between slew and 39*39 with 3.2 fillet main pcb.![Main comp plac i stopped on ](Images/V2.png) onto anddin C nad R and Fb super a lot and hard.
+![placed the cps and fb](<Images/Screenshot 2026-07-19 010542.png>)![With resistprs](<Images/Screenshot 2026-07-19 013916.png>)
