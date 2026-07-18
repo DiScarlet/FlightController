@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "ICM-42688-P")(type "KiCad")(uri "${KIPRJMOD}/KiCAD_Libs/FCSymbols/ICM-42688-P.kicad_sym")(options "")(descr ""))
   (lib (name "CustomSymbols")(type "KiCad")(uri "${KIPRJMOD}/KiCAD_Libs/FCSymbols/CustomSymbols.kicad_sym")(options "")(descr ""))
+  (lib (name "UJ20-C-H-G-SMT-2A-P16-TR")(type "KiCad")(uri "${KIPRJMOD}/KiCAD_Libs/FCSymbols/UJ20-C-H-G-SMT-2A-P16-TR.kicad_sym")(options "")(descr ""))
 )
