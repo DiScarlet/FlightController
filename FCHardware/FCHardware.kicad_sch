@@ -2261,7 +2261,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 0 -22.86 90)
 					(length 2.54)
 					(name "SW"
@@ -2459,7 +2459,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin power_out line
 					(at 15.24 -8.89 180)
 					(length 2.54)
 					(name "VOUT"
@@ -2477,7 +2477,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 15.24 -12.7 180)
 					(length 2.54)
 					(name "VOUT"
@@ -7024,6 +7024,12 @@
 		(uuid "b86dd23f-ee28-4112-97ae-3241a3e1e17a")
 	)
 	(junction
+		(at 87.63 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "be63c6e6-0639-40fe-a52d-33ce2caaa298")
+	)
+	(junction
 		(at 191.77 231.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7120,6 +7126,10 @@
 		(uuid "fa26529f-4d83-44cb-b762-7242d1c0cd75")
 	)
 	(no_connect
+		(at 93.98 250.19)
+		(uuid "055c7757-3b7e-47ac-b8cf-6f9d03b0711c")
+	)
+	(no_connect
 		(at 100.33 78.74)
 		(uuid "08ae83d7-e103-4564-862e-15f08b1f670c")
 	)
@@ -7142,6 +7152,10 @@
 	(no_connect
 		(at 100.33 121.92)
 		(uuid "17d990c8-dad6-4a34-a4ca-0956f81f5090")
+	)
+	(no_connect
+		(at 43.18 237.49)
+		(uuid "19043f80-e7a8-4e56-8355-9853fdc47ba6")
 	)
 	(no_connect
 		(at 379.73 66.04)
@@ -7224,6 +7238,10 @@
 		(uuid "6a2b0f5e-da99-4ca3-b4ee-97133e9485a8")
 	)
 	(no_connect
+		(at 93.98 245.11)
+		(uuid "6c0927b8-90af-4468-bde2-f5da6e6d55ee")
+	)
+	(no_connect
 		(at 59.69 83.82)
 		(uuid "788c2fb6-02aa-46cf-8e34-cecf136ab6bb")
 	)
@@ -7268,6 +7286,10 @@
 		(uuid "aba4316b-256b-4b35-b981-e74c7f10ed95")
 	)
 	(no_connect
+		(at 93.98 247.65)
+		(uuid "adfd92ca-6305-46ba-b0d8-86e25323b106")
+	)
+	(no_connect
 		(at 100.33 106.68)
 		(uuid "b4339522-042b-429e-b99a-03890340c295")
 	)
@@ -7306,6 +7328,10 @@
 	(no_connect
 		(at 100.33 137.16)
 		(uuid "db704387-ef1a-431b-9596-46a3c3a72404")
+	)
+	(no_connect
+		(at 93.98 242.57)
+		(uuid "dc601227-e0ca-407d-a9a9-7e1f24cbe9b2")
 	)
 	(no_connect
 		(at 100.33 93.98)
@@ -7801,7 +7827,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 44.45) (xy 87.63 48.26)
+			(xy 87.63 44.45) (xy 87.63 46.99)
 		)
 		(stroke
 			(width 0)
@@ -8369,6 +8395,16 @@
 			(type default)
 		)
 		(uuid "594cd843-09b0-4a08-b4a5-0bc18fdad1c6")
+	)
+	(wire
+		(pts
+			(xy 87.63 46.99) (xy 87.63 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597e3029-85cb-4bc5-b24c-b61c06102050")
 	)
 	(polyline
 		(pts
@@ -14558,6 +14594,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 87.63 46.99 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "602fd957-4af8-440a-8a2f-2f722e1e8c9d")
+		(property "Reference" "#FLG06"
+			(at 89.535 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 91.44 46.9899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 87.63 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cbfc6d3-ba1d-4dd8-bf7e-8f554bf47e97")
+		)
+		(instances
+			(project ""
+				(path "/2c9190cb-62a9-4a80-bcd5-31c54a1af4fd"
+					(reference "#FLG06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 132.08 88.9 0)
 		(unit 1)
@@ -15818,7 +15921,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "FCFootprints:CONV_TPSM63603EXTRDHR"
+		(property "Footprint" "RF_Module:ESP32-C3-WROOM-02"
 			(at 344.17 207.645 0)
 			(effects
 				(font
