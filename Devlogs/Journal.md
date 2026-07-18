@@ -309,4 +309,6 @@ Fixed footprint/sym mismatch issues. must have a ref for place, looking for 1 fr
 
 Fixed symbols/footprints mismatch. Added pins, upadated and modified several symbols and footprints to at the end of the process achive 0 import errors. ![Placing comonnets](<Images/Screenshot 2026-07-18 212906.png>)![Placement idea 1](<Images/Screenshot 2026-07-18 214414.png>).
 time to separarte into top and bottom parts. size of fc must mutch the esc. made +- border of 30.5 between slew and 39*39 with 3.2 fillet main pcb.![Main comp plac i stopped on ](Images/V2.png) onto anddin C nad R and Fb super a lot and hard.
-![placed the cps and fb](<Images/Screenshot 2026-07-19 010542.png>)![With resistprs](<Images/Screenshot 2026-07-19 013916.png>)
+set ICM-42688-P orientation corrrect as to dataheet
+![placed the cps and fb](<Images/Screenshot 2026-07-19 010542.png>)![With resistprs](<Images/Screenshot 2026-07-19 013916.png>).
+onto wirin, will set the deisong rules. ![dESIGN RULES](<Images/Screenshot 2026-07-19 022216.png>)
