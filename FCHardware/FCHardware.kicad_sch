@@ -1255,20 +1255,22 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 11.43 35.814 0)
+			(property "Reference" "U5"
+				(at 6.858 32.766 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "TPSM63603"
-				(at 16.256 33.274 0)
+				(at 6.858 30.48 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" "RF_Module:ESP32-C3-WROOM-02"
@@ -1436,7 +1438,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at -15.24 -8.89 0)
 					(length 2.54)
 					(name "VOUT"
@@ -1454,7 +1456,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at -15.24 -12.7 0)
 					(length 2.54)
 					(name "VOUT"
@@ -1508,7 +1510,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at -7.62 -22.86 90)
 					(length 2.54)
 					(name "VOUT"
@@ -1544,7 +1546,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at -3.81 -22.86 90)
 					(length 2.54)
 					(name "VOUT"
@@ -1616,7 +1618,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 3.81 -22.86 90)
 					(length 2.54)
 					(name "VOUT"
@@ -1652,7 +1654,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 7.62 -22.86 90)
 					(length 2.54)
 					(name "VOUT"
@@ -1814,7 +1816,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 15.24 -8.89 180)
 					(length 2.54)
 					(name "VOUT"
@@ -1832,7 +1834,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 15.24 -11.43 180)
 					(length 2.54)
 					(name "VOUT"
@@ -16026,7 +16028,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "RF_Module:ESP32-C3-WROOM-02"
+		(property "Footprint" "FCFootprints:CONV_TPSM63603EXTRDHR"
 			(at 344.17 207.645 0)
 			(effects
 				(font
