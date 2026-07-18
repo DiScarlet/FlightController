@@ -258,9 +258,36 @@ Fortunately, it looks like I should be able to purchase most of the required com
 
 
 -------
-No custom firmaware - Betaflight. new mcu - STM32F405RGT6. wiired. mpu6000 no, too aold bt can do ICM-42688-P so buy https://www.mouser.fi/en/ProductDetail/TDK-InvenSense/EV_ICM-42688-P?qs=hWgE7mdIu5SqHj7syF9KYA%3D%3D&srsltid=AfmBOoqFZfDyEx5e1ftafNK99B6WNZb-u7DJiRIwgOHFTkHvj6oJdSX1 and just get the chop idk
-Moved libs into proj dir. imp icuЮ hrd poer wiring WITH ALL ANLG AND DGTL PINS. found devboard schemtics will copy off from them. boot and rst sequences no buttons just test pads to seave the space. boot is just circuted to 3v3 (nt gnd cos using betflight and i need it to start and read LOW by default and be povrred only if i wanna flash it). RST 
+created_at: "2026-07-17"
+Lapse Links:
+- [Flight Controller Schematics 12](https://lapse.hackclub.com/timelapse/qFTWT7Qf1Yv2)
+- [Flight Controller Schematics 13](https://lapse.hackclub.com/timelapse/cIjbhHLziKkF)
+- [Flight Controller Footprints 4](https://lapse.hackclub.com/timelapse/JtB1HHLpG3G7)
 
-with a lot of limotation but can also run ardupilot. designing for both.
+Day X: Betaflight It Is
 
-SWITCHED FROM I2C TO SPI. MUST DO NOT OLNY 3V3 ALSO 5V LINE TO SUPPLY THE RECIEVER. ALSO CAMER IN THE FUTURE. AND LIDA FOR FUTURE. TPSM63603 WILL DO 5V and AP2112K-3.3 further 3v3. jst for rec. 41 erc error lets fix. down to 0. Updated BoM
+Decided to drop the idea of writing custom firmware and instead target Betaflight for the first revision of the flight controller. This meant replacing the ESP32-S3 with the STM32F405RGT6, rewiring the MCU, and redesigning the project around hardware already supported by the Betaflight ecosystem.
+
+Initially I considered the MPU6000 because of its popularity, but it is getting old and harder to source. Instead, I switched to the ICM-42688-P, which offers better performance while still being supported. I also found an evaluation board, so if anything goes wrong I can always inspect a working design or even salvage the chip if necessary.
+
+Moved all custom libraries into the project directory to make the repository self-contained. Reworked the STM32 power circuitry by connecting all required digital and analog supply pins according to the datasheet and referenced official development board schematics to verify the implementation.
+
+Simplified the boot and reset circuits to save PCB space. Instead of dedicated buttons, both BOOT0 and NRST are exposed as test pads. BOOT0 is held low by default through a pull-down resistor so Betaflight boots normally, and can be pulled high to 3.3 V only when entering the STM32 bootloader for firmware flashing.
+
+Although the primary target is Betaflight, the hardware should also be capable of running ArduPilot with some limitations, so I tried to keep the design compatible with both ecosystems.
+
+The IMU interface was changed from I²C to SPI for better performance and lower latency, which is the preferred configuration for modern flight controllers.
+
+The power architecture was expanded to include both 5 V and 3.3 V rails. The TPSM63603 now generates the 5 V supply for peripherals such as the ExpressLRS receiver, with room for a future FPV camera and LiDAR module, while an AP2112K-3.3 LDO provides a clean 3.3 V rail for the MCU and sensors. I also added a JST connector for the receiver.
+
+![New Schematics](<Images/Screenshot 2026-07-18 051935.png>)
+
+Spent quite some time chasing electrical rule check issues—at one point there were 41 ERC errors, but eventually got the count down to zero.
+
+![PCB view unwired](<Images/Screenshot 2026-07-18 052023.png>)
+
+Updated the Bill of Materials with production-ready components and, after breaking most of the footprint assignments during the redesign, rebuilt all footprints from scratch. It was honestly faster than trying to fix the old assignments one by one.
+
+![Footprints](<Images/Screenshot 2026-07-18 051918.png>)
+ 
+ Btw, I really like this journal entry. Rereading it makes me understand that this project has taught me more than I expected. 
