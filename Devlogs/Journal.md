@@ -255,3 +255,12 @@ Once I finish the ComponentsReferences.md file, I plan to add the price of every
 If you're reading this: Author wrote it sitting at the railway station with 12h of sleep in the past week. I'm kinda dedicated to this project and kinda wanna sleep. "To sleep or not to sleep?" - That is the question!
 
 Fortunately, it looks like I should be able to purchase most of the required components from Mouser Finland, which will make ordering everything much simpler. However, finding actual components instead of just selecting values from a schematic turned out to be much more difficult than I expected. Every capacitor, resistor, connector, and protection device comes in dozens or even hundreds of variants with different package sizes, voltage ratings, tolerances, temperature characteristics, and manufacturers. Learning how to choose real parts that satisfy both the electrical requirements and are still practical to solder by hand has probably been one of the most time-consuming parts of the project so far. I documented the selected components in [Components References](../ComponentsReferences.md).
+
+
+-------
+No custom firmaware - Betaflight. new mcu - STM32F405RGT6. wiired. mpu6000 no, too aold bt can do ICM-42688-P so buy https://www.mouser.fi/en/ProductDetail/TDK-InvenSense/EV_ICM-42688-P?qs=hWgE7mdIu5SqHj7syF9KYA%3D%3D&srsltid=AfmBOoqFZfDyEx5e1ftafNK99B6WNZb-u7DJiRIwgOHFTkHvj6oJdSX1 and just get the chop idk
+Moved libs into proj dir. imp icuЮ hrd poer wiring WITH ALL ANLG AND DGTL PINS. found devboard schemtics will copy off from them. boot and rst sequences no buttons just test pads to seave the space. boot is just circuted to 3v3 (nt gnd cos using betflight and i need it to start and read LOW by default and be povrred only if i wanna flash it). RST 
+
+with a lot of limotation but can also run ardupilot. designing for both.
+
+SWITCHED FROM I2C TO SPI. MUST DO NOT OLNY 3V3 ALSO 5V LINE TO SUPPLY THE RECIEVER. ALSO CAMER IN THE FUTURE. AND LIDA FOR FUTURE. TPSM63603 WILL DO 5V and AP2112K-3.3 further 3v3. jst for rec. 41 erc error lets fix. down to 0. Updated BoM
