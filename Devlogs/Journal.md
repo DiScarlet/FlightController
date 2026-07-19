@@ -312,3 +312,5 @@ time to separarte into top and bottom parts. size of fc must mutch the esc. made
 set ICM-42688-P orientation corrrect as to dataheet
 ![placed the cps and fb](<Images/Screenshot 2026-07-19 010542.png>)![With resistprs](<Images/Screenshot 2026-07-19 013916.png>).
 onto wirin, will set the deisong rules. ![dESIGN RULES](<Images/Screenshot 2026-07-19 022216.png>)
+
+I startd with TPSM63603 but it is super hard with alost all wired. abs getting roasted by the step dwon. very gard. spotted mistake vin is empty in tps. im more than sure that buk is shit
