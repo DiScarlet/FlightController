@@ -6860,12 +6860,6 @@
 		(uuid "9b8cc8fc-e605-4f06-8841-f839043b34c3")
 	)
 	(junction
-		(at 365.76 203.2)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9dfd4786-e9d4-4223-96a1-800cac3642bb")
-	)
-	(junction
 		(at 356.87 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7672,7 +7666,7 @@
 	)
 	(wire
 		(pts
-			(xy 363.22 203.2) (xy 365.76 203.2)
+			(xy 363.22 203.2) (xy 370.84 203.2)
 		)
 		(stroke
 			(width 0)
@@ -10653,16 +10647,6 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 203.2) (xy 370.84 203.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f583afd3-2157-4231-8526-ccdd7058726a")
-	)
-	(wire
-		(pts
 			(xy 358.14 109.22) (xy 358.14 115.57)
 		)
 		(stroke
@@ -11400,6 +11384,16 @@
 			(justify left bottom)
 		)
 		(uuid "da57ce0d-0da7-4194-8765-1735a9a39451")
+	)
+	(label "VIN"
+		(at 325.12 201.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "df09536f-e2b8-4eb0-9f8f-0a953f3562be")
 	)
 	(label "M2_C"
 		(at 379.73 66.04 0)
@@ -18227,71 +18221,6 @@
 			(project "FCHardware"
 				(path "/2c9190cb-62a9-4a80-bcd5-31c54a1af4fd"
 					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 365.76 203.2 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cb2834b8-c771-4131-814a-cd9f22159e14")
-		(property "Reference" "#FLG07"
-			(at 365.76 205.105 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 367.03 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 365.76 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 365.76 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 365.76 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e22232d4-d9b2-495c-9934-407e24f8611f")
-		)
-		(instances
-			(project ""
-				(path "/2c9190cb-62a9-4a80-bcd5-31c54a1af4fd"
-					(reference "#FLG07")
 					(unit 1)
 				)
 			)
