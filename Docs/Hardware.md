@@ -99,6 +99,4 @@ These pads simplify firmware flashing, debugging and hardware validation while k
 
 ## Revision 2 Ideas
 
-Like any first hardware revision, there are already several improvements I would like to explore in a future iteration.
-
 The most significant changes would include improving the routing around the buck converter, refining connector placement to simplify assembly, integrating more cleanly with the ESC stack, and exposing additional communication interfaces for peripherals such as GPS and LiDAR. Hardware validation of the first manufactured revision will ultimately determine which of these changes provide the greatest benefit.

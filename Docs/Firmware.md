@@ -73,4 +73,4 @@ Configurator: https://app.betaflight.com/
 
 ## Future Development
 
-The first revision focuses entirely on reliable flight control hardware. Once basic functionality has been verified, future firmware development will expand to include additional peripherals such as GPS, LiDAR, barometer support and, eventually, evaluation of ArduPilot compatibility.
+The first revision focuses entirely on reliable flight control hardware. Once basic functionality has been verified, future firmware development will expand to include additional peripherals such as GPS, LiDAR, barometer support and, eventually, ArduPilot compatibility.
