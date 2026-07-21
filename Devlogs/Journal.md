@@ -4,7 +4,11 @@ description: "It must fly (i'll wrie it later)"
 created_at: "2026-07-06"
 
 ----------------------
+## Project Journal
+
+### Day 1
 created_at: "2026-07-06"
+
 Lapse Links: 
 - [Lapse Schematics 1](https://lapse.hackclub.com/timelapse/7EcZ5cB8u3wI)
 - [Lapse Schematics 2](https://lapse.hackclub.com/timelapse/V2QrQ_YrS28b)
@@ -27,9 +31,11 @@ I like what I've done so far. Even though I am still not finished, I understand 
 
 ---------------------
 created_at: "2026-07-07"
+
 Lapse Links: 
 - [Lapse Schematics 3](https://lapse.hackclub.com/timelapse/JKiI6UassHQw)
-Day 2: Even though I really enjoyed the progress of working on a lot of interesting stuff yesterday, there were too many unnecessary components. I changed the main controller to the Adafruit ESP32 Feather V2, which reduced the amount of components drastically.
+### Day 2
+Even though I really enjoyed the progress of working on a lot of interesting stuff yesterday, there were too many unnecessary components. I changed the main controller to the Adafruit ESP32 Feather V2, which reduced the amount of components drastically.
 This board has a lot of components already integrated into its internal structure, so I could alter the following elements:
 1) Microcontroller: Adafruit ESP32 Feather V2. Why V2? It has USB-C and easier power management already integrated.
 2) Removed CP2104: Already integrated into item 1. 
@@ -46,7 +52,8 @@ Overall, the schematics look way more readable now, and the component switch was
 created_at: "2026-07-08"
 Lapse Links: 
 - [Lapse Schematics 4](https://lapse.hackclub.com/timelapse/zhmaA2kOq_Py)
-Day 3: To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
+### Day 3
+To use more powerful motors, my infrastructure allows me to switch from a 1S to a 2S LiPo battery. This is mainly due to the DRV8833PWP drivers, which accept 2.7V to 10.8V — a span that falls right into the 2S range. To make this work, I chose the TPS62125DSG step-down regulator. I was wondering how to connect the battery to the PCB itself and settled on the Amass XT60PW male PCB-mount connector. Most JST connectors are too weak, and an XT90 is overkill. I ended up a bit confused by all the different power inputs and outputs, but I eventually figured out the wiring and ended up with the following schematic:
 ![TPS62125DSG Wiring](<Images/Screenshot 2026-07-08 015507.png>)
 ![ESP32 + Power Schematics](<Images/Screenshot 2026-07-08 015517.png>)
 
@@ -54,7 +61,8 @@ Day 3: To use more powerful motors, my infrastructure allows me to switch from a
 created_at: "2026-07-11"
 Lapse Links: 
 - [Lapse Schematics 5](https://lapse.hackclub.com/timelapse/zi6OlWzVVC0I)
-Day 4: Today I made significant modifications to the flight controller design. I stepped up from a simple 2S brushed drone concept to the prototype architecture of a real 4S 7" brushless drone.
+### Day 4
+Today I made significant modifications to the flight controller design. I stepped up from a simple 2S brushed drone concept to the prototype architecture of a real 4S 7" brushless drone.
 
 1. Updated the buck converter
 
@@ -134,7 +142,8 @@ Lapse Links:
 - [Lapse Schematics 7](https://lapse.hackclub.com/timelapse/CSfY-yu12VB2)
 - [Lapse Schematics 8](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
 - [Lapse Schematics 9](https://lapse.hackclub.com/timelapse/6Uwn8jtsZGfW)
-Day 5: Today I replaced the ESP32 Feather V2 development board with the actual ESP32-S3-WROOM-1U module and all of the supporting circuitry required for a production PCB. The Feather dev board served me well for prototyping, but it was time to move to a real hardware design.
+### Day 5
+Today I replaced the ESP32 Feather V2 development board with the actual ESP32-S3-WROOM-1U module and all of the supporting circuitry required for a production PCB. The Feather dev board served me well for prototyping, but it was time to move to a real hardware design.
 ESP32
 - Removed the Adafruit ESP32 Feather V2 development board.
 - Switched to the ESP32-S3-WROOM-1U module.
@@ -193,10 +202,9 @@ Lapse Links:
 - [Lapse Schematics 11](https://lapse.hackclub.com/timelapse/10gVjKCt_ep9)
 - [Flight Controller Footprints 1](https://lapse.hackclub.com/timelapse/hQegLY-AzRu6)
 - [Flight Controller Footprints 2](https://lapse.hackclub.com/timelapse/EoTzfVyzHLk1)
-- [Flight Controller Footprints 3](https://lapse.hackclub.com/timelapse/lF_Vx_5Nq1XL)
-- [Flight Controller Components 1](https://lapse.hackclub.com/timelapse/Cr0G3cQVFeo1)
 
-Day 6: Continued refining the flight controller schematic and completed the transition to support a **4S–6S LiPo** power input. I replaced the original 20 V TVS diode with a **Vishay SMBJ28A**, which has a 28 V reverse working voltage, making it suitable for a fully charged 6S LiPo (25.2 V) while still providing transient protection.
+### Day 6
+Continued refining the flight controller schematic and completed the transition to support a **4S–6S LiPo** power input. I replaced the original 20 V TVS diode with a **Vishay SMBJ28A**, which has a 28 V reverse working voltage, making it suitable for a fully charged 6S LiPo (25.2 V) while still providing transient protection.
 
 While reviewing the schematic, I discovered a short circuit by using KiCad's **Net Highlight** tool. Highlighting the **3.3 V** net also highlighted **GND**, immediately indicating a direct short. After tracing the connection, I found that the ESP32's 3.3 V decoupling capacitors had been wired incorrectly. Fixing the capacitor connections removed the short.
 
@@ -213,10 +221,13 @@ The final result was reducing the ERC report from **more than 60 errors to zero*
 
 --------------------
 created_at: "2026-07-14"
-Lapse Links:
-- [Lapse 12](link)
 
-Day 7: Moving on to Footprints.
+Lapse Links:
+- [Flight Controller Footprints 3](https://lapse.hackclub.com/timelapse/lF_Vx_5Nq1XL)
+- [Flight Controller Components 1](https://lapse.hackclub.com/timelapse/Cr0G3cQVFeo1)
+
+### Day 7
+Moving on to Footprints.
 
 Started assigning footprints to all components in the schematic. While selecting them, I also checked whether the chosen packages would actually be practical to solder by hand. For example, I verified that the 1210 package for the 630 V, 68 nF X7R MLCC (C10) should still be manageable for manual soldering.
 
@@ -259,12 +270,14 @@ Fortunately, it looks like I should be able to purchase most of the required com
 
 -------
 created_at: "2026-07-17"
+
 Lapse Links:
 - [Flight Controller Schematics 12](https://lapse.hackclub.com/timelapse/qFTWT7Qf1Yv2)
 - [Flight Controller Schematics 13](https://lapse.hackclub.com/timelapse/cIjbhHLziKkF)
 - [Flight Controller Footprints 4](https://lapse.hackclub.com/timelapse/JtB1HHLpG3G7)
 
-Day X: Betaflight It Is
+### Day 8
+Betaflight It Is
 
 Decided to drop the idea of writing custom firmware and instead target Betaflight for the first revision of the flight controller. This meant replacing the ESP32-S3 with the STM32F405RGT6, rewiring the MCU, and redesigning the project around hardware already supported by the Betaflight ecosystem.
 
@@ -294,24 +307,132 @@ Updated the Bill of Materials with production-ready components and, after breaki
 
 
  -------
- Switched stm32 footpront. started adding 3d models. changed usb c sym to be alliged with footpront. fixed yest mist - for imu test pint as footprt was. fixed TPSM63603 which was missing 3 pins. 
+### Day 9-10
+created_at: "2026-07-18/19"
 
- Warning: No net found for component J2 pad MP (no pin MP in symbol).
-Warning: No net found for component J3 pad MP (no pin MP in symbol).
+Lapse Links:
+- [Flight Controller Schematics 13](https://lapse.hackclub.com/timelapse/cIjbhHLziKkF)
+- [Flight Controller Footprints 4](https://lapse.hackclub.com/timelapse/JtB1HHLpG3G7)
+- [Flight Controller Fixing Errors 1](https://lapse.hackclub.com/timelapse/O3XZnc101T1P)
+- [Flight Controller Routing 0](https://lapse.hackclub.com/timelapse/yKk5Ec0wwg1U)
+- [Flight Controller Routing 1](https://lapse.hackclub.com/timelapse/HK290xkNnn8u)
+
+Started by switching the STM32 footprint and adding proper 3D models. Also aligned the USB-C symbol with its footprint because it was rotated differently. Fixed yesterday's mistake with the IMU test point footprint and noticed that the TPSM63603 footprint was missing three pins... somehow.
+
+```text
 Warning: No net found for component J2 pad MP (no pin MP in symbol).
 Warning: No net found for component J3 pad MP (no pin MP in symbol).
+```
 
+Spent quite a while hunting down footprint/symbol mismatches. In the end, every footprint and symbol matched properly and the import errors disappeared. It was surprisingly satisfying seeing the schematic finally clean up.
 
-Fixed footprint/sym mismatch issues. must have a ref for place, looking for 1 from real fcs. final schematics for now ![alt text](<Images/Screenshot 2026-07-18 210528.png>)
+Final schematic for now.
 
+![alt text](<Images/Screenshot 2026-07-18 210528.png>)
 
-![alt text](<Images/Screenshot 2026-07-18 210209.png>) what i have to wire
+Started component placement. I wanted some reference from real flight controllers to make the layout feel familiar. The goal was to keep the FC the same size as the ESC (30.5 × 30.5 mm mounting pattern, 39 × 39 mm PCB with 3.2 mm corner fillets).
 
-Fixed symbols/footprints mismatch. Added pins, upadated and modified several symbols and footprints to at the end of the process achive 0 import errors. ![Placing comonnets](<Images/Screenshot 2026-07-18 212906.png>)![Placement idea 1](<Images/Screenshot 2026-07-18 214414.png>).
-time to separarte into top and bottom parts. size of fc must mutch the esc. made +- border of 30.5 between slew and 39*39 with 3.2 fillet main pcb.![Main comp plac i stopped on ](Images/V2.png) onto anddin C nad R and Fb super a lot and hard.
-set ICM-42688-P orientation corrrect as to dataheet
-![placed the cps and fb](<Images/Screenshot 2026-07-19 010542.png>)![With resistprs](<Images/Screenshot 2026-07-19 013916.png>).
-onto wirin, will set the deisong rules. ![dESIGN RULES](<Images/Screenshot 2026-07-19 022216.png>)
+![Placing components](<Images/Screenshot 2026-07-18 212906.png>)
+![Placement idea 1](<Images/Screenshot 2026-07-18 214414.png>)
+![Main component placement](Images/V2.png)
 
-I startd with TPSM63603 but it is super hard with alost all wired. abs getting roasted by the step dwon. very gard. spotted mistake vin is empty in tps. im more than sure that buk is shit![An abs nightmare off an electrical eninner](<Images/Screenshot 2026-07-19 042848.png>)
-STM32F405RGTx is not easir. todo CHECK SERI UART COMM if correcr pins![Some progress of STM32 routing driwing me insane](<Images/Screenshot 2026-07-19 061738.png>)
+Added what felt like an endless number of capacitors, resistors and the ferrite bead. Also corrected the orientation of the ICM-42688-P according to the datasheet before getting too far.
+
+![Placed capacitors and ferrite bead](<Images/Screenshot 2026-07-19 010542.png>)
+![With resistors](<Images/Screenshot 2026-07-19 013916.png>)
+
+Before routing, I configured the board design rules.
+
+![Design rules](<Images/Screenshot 2026-07-19 022216.png>)
+
+Then came the TPSM63603...
+
+Routing the buck converter was an absolute nightmare. It felt like every pin wanted to go in the opposite direction. Halfway through I realised VIN wasn't actually connected because I had left it as an empty net label. At this point I was convinced whoever designed this package was personally trying to make PCB routing harder.
+
+![Buck converter routing nightmare](<Images/Screenshot 2026-07-19 042848.png>)
+
+The STM32 wasn't much kinder. Routed a good portion of it but there is still plenty left. Need to double-check the serial UART pin assignments before I commit to the routing.
+
+![STM32 routing progress](<Images/Screenshot 2026-07-19 061738.png>)
+
+---------------
+### Day 11 + 12
+created_at: "2026-07-20/21"
+
+Lapse Links:
+- [Flight Controller Routing 2](https://lapse.hackclub.com/timelapse/HWvUumr3cuOM)
+- [Flight Controller Routing 3](https://lapse.hackclub.com/timelapse/GjfclvQMqYpr)
+- [Flight Controller Routing 4](https://lapse.hackclub.com/timelapse/cDtOHCTtI151)
+- [Flight Controller Routing 5](https://lapse.hackclub.com/timelapse/sghr0FeVSwDz)
+- [Flight Controller CAD Design 1](https://lapse.hackclub.com/timelapse/KtIpimI4lsoy)
+- [Flight Controller CAD Design 2](https://lapse.hackclub.com/timelapse/a1JzYd-nAppO)
+Finished almost all of the routing. The board is finally starting to look like an actual flight controller instead of a spiderweb of airwires. I still wanted to see if I could move a few resistors and capacitors to the back side to reduce congestion around the MCU.
+
+![Routing progress](<Images/Screenshot 2026-07-20 011714.png>)
+
+USB-C ended up being much harder than expected. Since the differential pairs should have the same electrical length, using vias meant each line in the pair also needed the same number of vias. That made routing around the connector surprisingly frustrating.
+
+With everything except ground completed, it was finally time for copper pours.
+
+![Without GND](<Images/Screenshot 2026-07-20 144340.png>)
+![GND copper zones](<Images/Screenshot 2026-07-20 150100.png>)
+
+...and then I realised I had completely forgotten to route some of the power rails.
+
+After that came cleanup. Removing unnecessary 90° corners, simplifying traces, reducing the number of vias where possible and generally making the routing look cleaner.
+
+![Before cleanup](<Images/Screenshot 2026-07-21 000648.png>)
+![After cleanup](<Images/Screenshot 2026-07-21 001054.png>)
+![Back looks much cleaner](<Images/Screenshot 2026-07-21 001542.png>)
+![Front cleanup](<Images/Screenshot 2026-07-21 001616.png>)
+![Final front cleanup](<Images/Screenshot 2026-07-21 010244.png>)
+
+Then came the Design Rule Checker...
+
+Started with around **56 errors** and **256 warnings**.
+
+One particularly embarrassing mistake: I had connected the USB D+ and D− lines from the connector to the ESD diode... and then back to the USB connector instead of the STM32.
+
+Also learned (the hard way) that the USBLC6-2SC6 goes **in parallel**, not in series.
+
+And then there was the TPSM63603 again.
+
+Whoever placed pin 22 in the middle of the package with no regard for routing... I have questions. Routing idea for that thing probably violates the Geneva Convention.
+
+Added stitching vias, fixed the remaining issues, created a few justified DRC exceptions, and finally reached **0 unconnected items**.
+
+Time for the fun part.
+
+Added all the 3D models and spent way too long just spinning the PCB around.
+
+![2D PCB](<Images/Screenshot 2026-07-21 055326.png>)
+![3D front](<Images/Screenshot 2026-07-21 055415.png>)
+![3D back](<Images/Screenshot 2026-07-21 055505.png>)
+![Schematics](<Images/Screenshot 2026-07-21 055718.png>)
+
+Finally imported the ESC into Fusion 360 and assembled the complete FC + ESC stack with screws, spacers and connectors.
+
+![CAD FC + ESC](<Images/Screenshot 2026-07-21 081357.png>)
+![CAD FC + ESC](<Images/Screenshot 2026-07-21 081416.png>)
+
+I honestly couldn't stop looking at it.
+
+A few days ago this was just a schematic with hundreds of ratsnest lines. Now it's an actual flight controller that could be manufactured.
+
+It took far longer than I expected. There were moments where I questioned almost every routing decision, fought DRC, ERC, USB-C, the buck converter and pretty much every footprint at least once.
+
+But it's done.
+
+**0 ERC errors.**
+**0 DRC errors.**
+
+It feels unreal seeing something that started as an idea become a complete PCB.
+
+---
+
+### Ideas for V2
+
+- Better ESC integration.
+- Cleaner routing around the buck converter.
+- Add LiDAR connector/support.
+- Improve mechanical integration with the frame.
