@@ -4,21 +4,23 @@ A custom STM32F405-based flight controller designed from the ground up for moder
 
 A preview of the complete assembly by Autodesk Viewer: https://autode.sk/4bVkogq
 
+---
+
 # A Note to the Reviewer
 
 Dear Reviewer,
 
-Thank you for taking the time to look through this project.
+Thank you for taking the time to look through my project.
 
-This repository documents the design and development of my first large-scale hardware project — a custom STM32F405-based flight controller.
+This repository documents the design of my first large hardware project—a custom STM32F405-based flight controller.
 
-Everything you see in this repository—from the schematic and component selection to the PCB layout, routing, design rules, mechanical integration, and documentation—was developed from scratch. I did not follow a tutorial or replicate an existing flight controller design. Throughout the project, the primary sources of information were component datasheets, manufacturer reference manuals, application notes, and publicly available technical documentation.
+Everything here was designed by me from scratch, from selecting the components and drawing the schematic to routing the PCB, creating custom symbols and footprints where needed, writing the documentation, and assembling the CAD model. I deliberately chose not to follow a tutorial or copy an existing flight controller because I wanted to understand how every subsystem actually works. Most of what I learned came from datasheets, reference manuals, application notes, and a lot of trial and error.
 
-I understand that this approach required significantly more time than following an existing design, but that was an intentional decision. Working through the design myself forced me to understand not only *what* needed to be done, but *why*. Every mistake, redesign, and challenge became an opportunity to learn something new, and I believe that experience has been far more valuable than simply reproducing someone else's work.
+This definitely wasn't the fastest way to build a flight controller, but it was the best way for me to learn. There were plenty of mistakes, redesigns, and moments where I questioned my own sanity (especially while routing the buck converter), but every one of them taught me something new.
 
-Like any real engineering project, the repository documents mistakes, redesigns, and the reasoning behind many design decisions. I intentionally logged my personal opinions on what is going on in the development journal rather than only presenting the bare facts because I believe the engineering process is just as valuable as the finished PCB.
+The development journal intentionally contains both technical notes and my own thoughts throughout the project. I wanted it to show the real engineering process instead of only presenting the finished result.
 
-Due to the time and financial constraints of this project, it was not feasible to manufacture the PCB, assemble a complete drone, and perform hardware validation and flight testing before the Horizons' submission deadline. The current demonstration therefore focuses on the completed hardware design, documentation, and the mechanical integration of the flight controller with its intended ESC.
+Unfortunately, manufacturing the PCB, assembling a complete drone, and validating the hardware wasn't realistic within the available time and budget before the Horizons submission deadline. The current demonstration is the completed hardware design, documentation, and the mechanical integration of the flight controller with its intended ESC. I plan to continue the project after Horizons by manufacturing the PCB, adding some more hardware stuff, testing the firmware, and eventually flying it.
 
 ---
 
@@ -37,11 +39,11 @@ Firmware-related documentation, including programming interfaces, flashing instr
 FlightController/
 ├── CAD_Rendered/             # Fusion 360 assembly and mechanical models
 ├── FCHardware/               # KiCad project files
-├── Devlogs/
-│   ├── Images/               # Figures and renders
-│   └── Journal.md            # Development journal
-├── Docs/
-│   ├── Hardware.md
+├── Devlogs/                  # The overall folder with devlog documents
+│   ├── Images/                 # Figures and renders
+│   └── Journal.md              # Development journal
+├── Docs/                     #Documentation
+│   ├── Hardware.md         
 │   └── Firmware.md
 ├── ComponentsReferences.csv  # Component purchasing references (BOM)
 ├── FCHardware.csv            # Design references and documentation
@@ -76,7 +78,7 @@ FlightController/
 
 ## Acknowledgements
 
-This project would not have been possible without the excellent documentation, reference manuals, and open-source resources provided by the engineering community. I would like to thank the manufacturers and developers whose work made this project possible.
+This project would not have been possible without the documentation, manuals, and resources provided by the engineering community. 
 
 Special thanks to:
 - STMicroelectronics, TDK InvenSense, Texas Instruments, Diodes Incorporated, Betaflight, Sahil Parashar for providing the generic ESC model that was adapted for this project, KiCad, Autodesk.
