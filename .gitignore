@@ -15,13 +15,6 @@
 *.sch-lock
 *.lck
 
-# Auto-generated outputs (optional, but recommended)
-*.net
-*.lst
-*.xml
-*.png
-*.svg
-
 # Manufacturing Outputs
 gerbers/
 plot_outputs/
@@ -41,9 +34,6 @@ fp-info-cache
 *.kicad_pcb-bak
 *.kicad_prl-bak
 *.kicad_sch-bak
-
-#Libs
-KiCAD_Libs
 
 #Logs
 ERC_logs
