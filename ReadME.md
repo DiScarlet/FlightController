@@ -48,32 +48,29 @@ Detailed information about the PCB architecture, power distribution, interfaces,
 Firmware-related documentation, including programming interfaces, flashing instructions, hardware bring-up, Betaflight target information, and the planned firmware development roadmap, is available in **`Docs/Firmware.md`**.
 
 
----
-
 ## Gallery
 
 ### Schematic Overview
 
-![Schematic](Devlogs\Images\Schematic.png)
+![Schematic](Devlogs/Images/Schematic.png)
 
 ### PCB Layout (2D)
 
-![PCB Layout](Devlogs\Images\PCBLayout2D.png)
+![PCB Layout](Devlogs/Images/PCBLayout2D.png)
 
 ### PCB Front (3D)
 
-![PCB Front](Devlogs\Images\PCB_Front.png)
+![PCB Front](Devlogs/Images/PCB_Front.png)
 
 ### PCB Back (3D)
 
-![PCB Back](Devlogs\Images\PCB_Back.png)
+![PCB Back](Devlogs/Images/PCB_Back.png)
 
 ### Fusion 360 Assembly
 
-![Fusion Assembly 1](Devlogs\Images\Fusion_Assembly_1.png)
+![Fusion Assembly 1](Devlogs/Images/Fusion_Assembly_1.png)
 
-![Fusion Assembly 2](Devlogs\Images\Fusion_Assembly_2.png)
-
+![Fusion Assembly 2](Devlogs/Images/Fusion_Assembly_2.png)
 ---
 
 ## Acknowledgements
