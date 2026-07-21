@@ -1339,6 +1339,17 @@
 			(uuid "0ff3caba-bfc6-4463-8689-0bb1b58b7719")
 		)
 		(embedded_fonts no)
+		(model "${KICAD_CUSTOM_3D_FC}/UJ20-C-H-G-SMT-2A-P16-TR.step"
+			(offset
+				(xyz 0 2 2)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -0 90 -0)
+			)
+		)
 	)
 	(footprint "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
 		(layer "F.Cu")
@@ -3444,6 +3455,17 @@
 			(uuid "64f7696b-92a3-461e-856f-bbee6cd77d06")
 		)
 		(embedded_fonts no)
+		(model "${KICAD_CUSTOM_3D_FC}/STM32F405RGT6.STEP"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
 		(layer "F.Cu")
@@ -5549,7 +5571,7 @@
 			(effects
 				(font
 					(size 0.48 0.48)
-					(thickness 0.15)
+					(thickness 0.12)
 				)
 			)
 		)
@@ -5560,7 +5582,7 @@
 			(effects
 				(font
 					(size 0.48 0.48)
-					(thickness 0.15)
+					(thickness 0.12)
 				)
 			)
 		)
@@ -6479,6 +6501,17 @@
 			(uuid "5de352c6-5b75-4f6b-8a05-b2f8adc70878")
 		)
 		(embedded_fonts no)
+		(model "${KICAD_CUSTOM_3D_FC}/ICM-42688-P.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 		(layer "F.Cu")
@@ -7375,15 +7408,15 @@
 			(uuid "b8cf8e13-1509-4f1d-b060-b74319bc35c6")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical.wrl"
+		(model "${KICAD_CUSTOM_3D_FC}/PRT-14417--3DModel-STEP-1.STEP"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 -1 -0.3)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 -180)
 			)
 		)
 	)
@@ -8148,7 +8181,7 @@
 			(uuid "6c82195b-f73d-4ce0-b702-fdcbbdc5f220")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_CLIK-Mate_502386-0870_1x08-1MP_P1.25mm_Horizontal.wrl"
+		(model "${KICAD_CUSTOM_3D_FC}/JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8156,7 +8189,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -180)
 			)
 		)
 	)
@@ -11863,6 +11896,17 @@
 			(uuid "a43659f4-e220-4279-b9ec-afedbfe16351")
 		)
 		(embedded_fonts no)
+		(model "${KICAD_CUSTOM_3D_FC}/TPSM63603EXTRDHR.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 		(layer "B.Cu")
