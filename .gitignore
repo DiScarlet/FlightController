@@ -47,3 +47,16 @@ KiCAD_Libs
 
 #Logs
 ERC_logs
+
+# Ignore Fusion cache/backup files
+*.f3z
+*.bak
+*.tmp
+*.lck
+
+# Ignore rendering output
+CAD_Rendered/Render/
+CAD_Rendered/Cache/
+
+# Ignore autosaves
+**/Recovery/
