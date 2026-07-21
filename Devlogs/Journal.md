@@ -1,6 +1,6 @@
 title: "Flight Controller"
 author: "Diana"
-description: "It must fly (i'll wrie it later)"
+description: "Design and development of a custom STM32F405-based flight controller for Betaflight-compatible FPV drones"
 created_at: "2026-07-06"
 
 ----------------------

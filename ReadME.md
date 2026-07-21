@@ -1,59 +1,96 @@
-# Custom Flight Controller Project
+# Custom Flight Controller
 
-This project documents the design and development of a custom STM32-based flight controller for 4S–6S FPV drones. The primary goal is to build a fully functional Betaflight-compatible* flight controller from scratch. The hardware is also designed with future ArduPilot compatibility in mind.
+> **Fly Fast. Land Hard. Send It Anyway**
 
-## Hardware Overview
+A custom STM32F405-based flight controller designed from the ground up for modern FPV drones. The project covers the complete hardware development process—from schematic capture and PCB layout to mechanical integration and 3D CAD assembly.
 
-1. **Microcontroller:** STM32F405RGT6 (ARM Cortex-M4 @ 168 MHz), selected for native Betaflight support and sufficient resources for future expansion.
+The primary goal is to create a fully functional **Betaflight-compatible** flight controller while keeping the hardware flexible enough for future **ArduPilot** support and additional onboard peripherals.
 
-2. **Electronic Speed Controller:** Hobbywing XRotor 65A 4-in-1 ESC. The flight controller communicates with the ESC using DShot digital protocol and receives current sensing and ESC telemetry.
+# A Note to the Reviewer
 
-3. **Inertial Measurement Unit (IMU):** TDK InvenSense ICM-42688-P connected over SPI for low latency and high update rates required by modern flight control firmware.
+Dear Reviewer,
 
-4. **Power System:**
-   - TPSM63603 synchronous buck converter generates a regulated **5 V** rail from the 4S–6S LiPo battery.
-   - AP2112K-3.3 LDO generates a clean **3.3 V** supply for the MCU, IMU, and other sensitive digital electronics.
+This project represents my first large-scale PCB design created entirely in KiCad.
 
-5. **Power Monitoring:** Battery voltage is measured using a resistor divider connected to an STM32 ADC channel, while battery current is measured using the ESC's analog current output.
+Everything you see in this repository—from the schematic and component selection to the PCB layout, routing, design rules, mechanical integration, and documentation—was developed from scratch. I did not follow a tutorial or replicate an existing flight controller design. Instead, I relied primarily on component datasheets, manufacturer reference documentation, application notes, and publicly available hardware documentation to understand how each subsystem should be designed.
 
-6. **Radio Receiver:** ExpressLRS support through the RadioMaster XR1 Nano receiver connected via UART.
+I understand that this approach required significantly more time than following an existing design, but that was an intentional decision. Working through the design myself forced me to understand not only *what* needed to be done, but *why*. Every mistake, redesign, and challenge became an opportunity to learn something new, and I believe that experience has been far more valuable than simply reproducing someone else's work.
 
-7. **Programming & Debugging:**
-   - USB Type-C interface for firmware flashing and configuration.
-   - SWD programming interface exposed through test pads.
-   - BOOT0 and NRST are accessible via test pads instead of physical buttons to reduce PCB size.
-
-8. **Expansion:** Additional UART and I²C interfaces are reserved for future peripherals such as GPS, barometer, LiDAR, FPV camera, VTX control, or other sensors.
-
-9. **Target Platform:** Designed primarily for Betaflight, with hardware compatibility intended for future ArduPilot development.
+Like any real engineering project, the repository documents mistakes, redesigns, and the reasoning behind many design decisions. I intentionally logged my personal opinions on what is going on in the development journal rather than only presenting the bare facts because I believe the engineering process is just as valuable as the finished PCB.
 
 ---
 
-## Documentation / Datasheets
+## Repository Structure
 
-### Microcontroller
-- STM32F405xx Datasheet  
-  https://www.st.com/resource/en/datasheet/dm00037051.pdf
+```text
+FlightController/
+├── CAD_Rendered/             # Fusion 360 assembly and mechanical models
+├── FCHardware/               # KiCad project files           
+├── Devlogs/
+    ├── Images/               # Figures and renders
+    └── Journal.md            # Journal / Devlogs
+├── Docs/
+│   ├── Hardware.md
+│   └── Firmware.md
+├── ComponentsReferences.csv  # Real parts' links to buy in Finland. Basically, Bill of Materials.
+├── FCHardware.csv            # Some documentation links
+└── README.md
+```
 
-### IMU
-- ICM-42688-P Datasheet  
-  https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/ds-000347-icm-42688-p-v1.6.pdf
+---
 
-### Power
-- TPSM63603 Buck Converter  
-  https://www.ti.com/lit/ds/symlink/tpsm63603.pdf
+## Documentation
 
-- AP2112K-3.3 LDO  
-  https://www.mouser.fi/datasheet/3/175/1/AP2112.pdf
+The repository contains additional documentation describing both the hardware and firmware aspects of the project.
 
-### ESC
-- Hobbywing XRotor 65A 4-in-1 ESC  
-  https://www.hobbywing.com/en/uploads/file/20251120/81969c41227e3db78d441e9c20476cf1.pdf
+Detailed information about the PCB architecture, power distribution, interfaces, mechanical design, manufacturing considerations, and future hardware revisions can be found in **`Docs/Hardware.md`**.
 
-### Motors
-- Hobbywing XRotor 2807 1300KV Motor  
-  https://www.hobbywing.com/uploads/file/20250207/46cccf132a1b9971633a272da27fb76f.pdf
+Firmware-related documentation, including programming interfaces, flashing instructions, hardware bring-up, Betaflight target information, and the planned firmware development roadmap, is available in **`Docs/Firmware.md`**.
 
-### Radio Receiver
-- RadioMaster XR1 Nano ExpressLRS Receiver  
-  https://radiomasterrc.com/products/xr1-nano-multi-frequency-expresslrs-receiver?variant=46486320480448
+
+---
+
+## Gallery
+
+### Schematic Overview
+
+![Schematic](<Devlogs/Images/Screenshot 2026-07-21 055718.png>)
+
+### PCB Layout (2D)
+
+![PCB Layout](<Devlogs/Images/Screenshot 2026-07-21 055326.png>)
+
+### PCB Front (3D)
+
+![PCB Front](<Devlogs/Images/Screenshot 2026-07-21 055415.png>)
+
+### PCB Back (3D)
+
+![PCB Back](<Devlogs/Images/Screenshot 2026-07-21 055505.png>)
+
+### Fusion 360 Assembly
+
+![Fusion Assembly 1](<Devlogs/Images/Screenshot 2026-07-21 081357.png>)
+
+![Fusion Assembly 2](<Devlogs/Images/Screenshot 2026-07-21 081416.png>)
+
+---
+
+## Acknowledgements
+
+This project would not have been possible without the excellent documentation, reference manuals, and open-source resources provided by the engineering community. I would like to thank the manufacturers and developers whose work made this project possible.
+
+Special thanks to:
+
+- **STMicroelectronics** for the STM32 documentation.
+- **TDK InvenSense** for the ICM-42688-P documentation.
+- **Texas Instruments** and **Diodes Incorporated** for detailed power management documentation.
+- **Betaflight** for developing an open-source flight control firmware.
+- **Sahil Parashar** for sharing the generic model of the ESC which was later modified to represent the ESC used for this project.
+- **KiCad** for providing so many opportunities open-sourced.
+- **Autodesk** for Fusion 360.
+- **Family and Firends** for emotional support.
+
+---
+
+*"Fly Fast. Land Hard. Send It Anyway"*
