@@ -1,114 +1,76 @@
-# Firmware Guide
+# Firmware
 
-This document describes how to flash and configure the custom flight controller.
+The hardware has been designed primarily for Betaflight running on the STM32F405RGT6 microcontroller. Although the PCB has not yet been manufactured, the firmware workflow has already been planned to simplify the bring-up process once the first revision of the board arrives.
 
----
-
-# Requirements
-
-Software
-
-- STM32CubeProgrammer
-- Betaflight Configurator
-- STM32 USB Driver (Windows)
-
-Hardware
-
-- USB-C cable
-- or ST-Link V2 programmer
+The STM32 provides two programming interfaces. During development I intend to use the SWD interface together with an ST-Link programmer, as it allows full debugging and recovery even if the firmware becomes corrupted. For normal firmware updates, the USB Type-C connector can be used through the STM32 built-in DFU bootloader.
 
 ---
 
-# Flashing via USB DFU
+## Programming Interfaces
 
-1. Connect BOOT0 to 3.3 V using tweezers or a jumper.
-2. Connect the board to the PC using USB-C.
-3. Press RESET or reconnect USB.
-4. The STM32 should enumerate as **STM32 BOOTLOADER**.
+The board exposes two independent programming methods.
 
-Open STM32CubeProgrammer.
+### SWD
 
-Select:
+The SWD interface is available through dedicated test pads exposing:
 
-```
-USB
-```
+- SWDIO
+- SWCLK
+- NRST
+- 3.3 V
+- GND
 
-Connect to the device.
+This interface will be used for the initial bring-up of the board, firmware development and debugging.
 
-Open the firmware (.bin or .hex).
-
-Press **Download**.
-
-Disconnect BOOT0.
-
-Reset the board.
+![PCB](../Devlogs/Images/PCB.png) 
 
 ---
 
-# Flashing using ST-Link
+### USB DFU
 
-Connect
+The STM32F405 contains a factory bootloader stored in ROM. By pulling **BOOT0** high during reset, the MCU enters Device Firmware Upgrade (DFU) mode and can be programmed directly over the USB Type-C connector without requiring an external programmer.
 
-| ST-Link | Flight Controller |
-|---------|-------------------|
-| SWDIO | SWDIO |
-| SWCLK | SWCLK |
-| GND | GND |
-| 3V3 | 3V3 |
+Both **BOOT0** and **NRST** are exposed as SMD test pads instead of push buttons in order to reduce PCB size.
 
-Open STM32CubeProgrammer.
-
-Select
-
-```
-ST-Link
-```
-
-Connect.
-
-Open firmware.
-
-Download.
-
-Reset the board.
+![NRST](../Devlogs/Images/NRST.png)
 
 ---
 
-# First Bring-up Checklist
+## First Power-Up
 
-Verify in order:
+Once the PCB is assembled, the first goal is simply to verify that the hardware behaves as expected before any flight firmware is installed.
 
-- [ ] No excessive current draw
-- [ ] 5 V present
-- [ ] 3.3 V present
-- [ ] STM32 detected
-- [ ] USB communication works
-- [ ] SPI communication with IMU
-- [ ] IMU responds correctly
-- [ ] Receiver UART works
-- [ ] ESC telemetry works
-- [ ] ADC battery voltage works
-- [ ] Motor outputs generate DShot
+The planned validation sequence is:
 
----
+1. Verify that there are no shorts on the power rails.
+2. Apply power from a current-limited bench supply.
+3. Confirm that the 5 V rail is generated correctly.
+4. Verify the 3.3 V regulator output.
+5. Ensure that the STM32 starts correctly.
+6. Test USB enumeration.
+7. Verify SWD communication.
+8. Confirm SPI communication with the IMU.
+9. Validate battery voltage and current sensing.
 
-# Betaflight Target
-
-This hardware is intended to run a custom Betaflight target.
-
-The target configuration should define:
-
-- SPI IMU
-- UART assignments
-- Motor outputs
-- ADC channels
-- LED/Beeper (if implemented)
+Only after these checks pass will Betaflight be flashed.
 
 ---
 
-# Future Work
+## Betaflight
 
-- Create an official Betaflight target
-- Add Blackbox support
-- Validate ArduPilot compatibility
+The hardware was designed around the STM32F405 specifically because it is well supported by Betaflight.
+
+Once the board has been electrically validated, the next milestone will be creating a custom Betaflight target describing the hardware configuration, including the IMU, motor outputs, UART assignments and ADC channels.
+
+After the target is complete, the board should be configurable directly through Betaflight Configurator.
+
+Link: https://betaflight.com/
+Configurator: https://app.betaflight.com/
+
+![Betaflight](<../Devlogs/Images/Screenshot 2026-07-21 133231.png>)
+
+---
+
+## Future Development
+
+The first revision focuses entirely on reliable flight control hardware. Once basic functionality has been verified, future firmware development will expand to include additional peripherals such as GPS, LiDAR, barometer support and, eventually, evaluation of ArduPilot compatibility.

@@ -6,36 +6,23 @@ A custom STM32F405-based flight controller designed from the ground up for moder
 
 The primary goal is to create a fully functional **Betaflight-compatible** flight controller while keeping the hardware flexible enough for future **ArduPilot** support and additional onboard peripherals.
 
+An interactive preview of the complete assembly is available on Autodesk Viewer: https://autode.sk/4bVkogq
+
 # A Note to the Reviewer
 
 Dear Reviewer,
 
-This project represents my first large-scale PCB design created entirely in KiCad.
+Thank you for taking the time to look through this project.
 
-Everything you see in this repository—from the schematic and component selection to the PCB layout, routing, design rules, mechanical integration, and documentation—was developed from scratch. I did not follow a tutorial or replicate an existing flight controller design. Instead, I relied primarily on component datasheets, manufacturer reference documentation, application notes, and publicly available hardware documentation to understand how each subsystem should be designed.
+This repository documents the design and development of my first large-scale hardware project — a custom STM32F405-based flight controller designed entirely in KiCad.
+
+Everything you see in this repository—from the schematic and component selection to the PCB layout, routing, design rules, mechanical integration, and documentation—was developed from scratch. I did not follow a tutorial or replicate an existing flight controller design. Throughout the project, the primary sources of information were component datasheets, manufacturer reference manuals, application notes, and publicly available technical documentation.
 
 I understand that this approach required significantly more time than following an existing design, but that was an intentional decision. Working through the design myself forced me to understand not only *what* needed to be done, but *why*. Every mistake, redesign, and challenge became an opportunity to learn something new, and I believe that experience has been far more valuable than simply reproducing someone else's work.
 
 Like any real engineering project, the repository documents mistakes, redesigns, and the reasoning behind many design decisions. I intentionally logged my personal opinions on what is going on in the development journal rather than only presenting the bare facts because I believe the engineering process is just as valuable as the finished PCB.
 
----
-
-## Repository Structure
-
-```text
-FlightController/
-├── CAD_Rendered/             # Fusion 360 assembly and mechanical models
-├── FCHardware/               # KiCad project files           
-├── Devlogs/
-    ├── Images/               # Figures and renders
-    └── Journal.md            # Journal / Devlogs
-├── Docs/
-│   ├── Hardware.md
-│   └── Firmware.md
-├── ComponentsReferences.csv  # Real parts' links to buy in Finland. Basically, Bill of Materials.
-├── FCHardware.csv            # Some documentation links
-└── README.md
-```
+Although the hardware has not yet been manufactured or electrically validated, the design has successfully reached a manufacturable state with **zero ERC and zero DRC errors**. The next stage of the project will be PCB manufacturing, hardware bring-up, firmware development, and eventually the first flight.
 
 ---
 
@@ -47,6 +34,26 @@ Detailed information about the PCB architecture, power distribution, interfaces,
 
 Firmware-related documentation, including programming interfaces, flashing instructions, hardware bring-up, Betaflight target information, and the planned firmware development roadmap, is available in **`Docs/Firmware.md`**.
 
+---
+
+## Repository Structure
+
+```text
+FlightController/
+├── CAD_Rendered/             # Fusion 360 assembly and mechanical models
+├── FCHardware/               # KiCad project files
+├── Devlogs/
+│   ├── Images/               # Figures and renders
+│   └── Journal.md            # Development journal
+├── Docs/
+│   ├── Hardware.md
+│   └── Firmware.md
+├── ComponentsReferences.csv  # Component purchasing references (BOM)
+├── FCHardware.csv            # Design references and documentation
+└── README.md
+```
+
+---
 
 ## Gallery
 
@@ -79,14 +86,14 @@ This project would not have been possible without the excellent documentation, r
 
 Special thanks to:
 
-- **STMicroelectronics** for the STM32 documentation.
+- **STMicroelectronics** for the STM32 documentation and software ecosystem.
 - **TDK InvenSense** for the ICM-42688-P documentation.
 - **Texas Instruments** and **Diodes Incorporated** for detailed power management documentation.
-- **Betaflight** for developing an open-source flight control firmware.
-- **Sahil Parashar** for sharing the generic model of the ESC which was later modified to represent the ESC used for this project.
-- **KiCad** for providing so many opportunities open-sourced.
+- **Betaflight** for developing and maintaining an outstanding open-source flight control firmware.
+- **Sahil Parashar** for providing the generic ESC model that was adapted for this project.
+- **KiCad** for creating an exceptional open-source EDA suite.
 - **Autodesk** for Fusion 360.
-- **Family and Firends** for emotional support.
+- **My family and friends** for their encouragement and support throughout the project.
 
 ---
 
