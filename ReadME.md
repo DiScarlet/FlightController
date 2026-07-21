@@ -54,25 +54,25 @@ Firmware-related documentation, including programming interfaces, flashing instr
 
 ### Schematic Overview
 
-![Schematic](<Devlogs/Images/Screenshot 2026-07-21 055718.png>)
+![Schematic](Devlogs/Images/Screenshot%202026-07-21%20055718.png)
 
 ### PCB Layout (2D)
 
-![PCB Layout](<Devlogs/Images/Screenshot 2026-07-21 055326.png>)
+![PCB Layout](Devlogs/Images/Screenshot%202026-07-21%20055326.png)
 
 ### PCB Front (3D)
 
-![PCB Front](<Devlogs/Images/Screenshot 2026-07-21 055415.png>)
+![PCB Front](Devlogs/Images/Screenshot%202026-07-21%20055415.png)
 
 ### PCB Back (3D)
 
-![PCB Back](<Devlogs/Images/Screenshot 2026-07-21 055505.png>)
+![PCB Back](Devlogs/Images/Screenshot%202026-07-21%20055505.png)
 
 ### Fusion 360 Assembly
 
-![Fusion Assembly 1](<Devlogs/Images/Screenshot 2026-07-21 081357.png>)
+![Fusion Assembly 1](Devlogs/Images/Screenshot%202026-07-21%20081357.png)
 
-![Fusion Assembly 2](<Devlogs/Images/Screenshot 2026-07-21 081416.png>)
+![Fusion Assembly 2](Devlogs/Images/Screenshot%202026-07-21%20081416.png)
 
 ---
 
