@@ -22,7 +22,9 @@ I understand that this approach required significantly more time than following 
 
 Like any real engineering project, the repository documents mistakes, redesigns, and the reasoning behind many design decisions. I intentionally logged my personal opinions on what is going on in the development journal rather than only presenting the bare facts because I believe the engineering process is just as valuable as the finished PCB.
 
-Although the hardware has not yet been manufactured or electrically validated, the design has successfully reached a manufacturable state with **zero ERC and zero DRC errors**. The next stage of the project will be PCB manufacturing, hardware bring-up, firmware development, and eventually the first flight.
+Due to the time and financial constraints of this project, it was not feasible to manufacture the PCB, assemble a complete drone, and perform hardware validation and flight testing before the Horizons' submission deadline. The current demonstration therefore focuses on the completed hardware design, documentation, and the mechanical integration of the flight controller with its intended ESC.
+
+I also do not currently hold a drone pilot certificate, although I hope to obtain one in the future. Once I have the necessary resources and experience, I plan to continue this project by manufacturing the PCB, bringing up the hardware, developing the firmware, integrating the controller into a complete drone, and carrying out real-world flight testing as part of future Hack Club projects.
 
 ---
 
